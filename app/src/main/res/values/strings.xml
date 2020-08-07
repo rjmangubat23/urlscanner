@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Url Scanner</string>
+    <string name="url_scan_hint">Url will be displayed here</string>
+    <string name="clear">CLEAR</string>
+    <string name="time_label">Process time: 10s</string>
+</resources>

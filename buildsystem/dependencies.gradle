@@ -1,0 +1,91 @@
+allprojects {
+  repositories {
+    google()
+    jcenter()
+  }
+}
+
+ext {
+  //Android libraries
+  appCompat_version = '1.1.0'
+  material_version = '1.0.0'
+  materialAlpha_version = '1.2.0-alpha02'
+  constraintLayout_version = '1.1.3'
+  core_version = '1.3.1'
+  archComponents_version = '2.0.0'
+  firebaseCore_version = '17.4.4'
+  mlVision_version = '24.0.3'
+  cameraX_version = "1.0.0-beta02"
+  cameraView_version = "1.0.0-alpha09"
+
+  //Third party libraries
+  kotlin_coroutines_version = '1.3.5'
+  dagger_version = '2.11'
+  javaxAnnotations_version = '1.0'
+  javaxInject_version = '1'
+  retrofit_version = '2.6.2'
+  okhttp_logging_interceptor_version = '3.8.1'
+  glide_version = '4.0.0'
+
+  //Unit Testing
+  robolectric_version = '3.8'
+  junit_version = '4.12'
+  mockito_version = '1.4.0'
+  kluent_version = '1.14'
+
+  //Acceptance Testing
+  runner_version = '1.1.1'
+  espresso_version = '3.1.0'
+
+  //Development
+  leakCanaryVersion = '1.5'
+
+  mainApplication = [
+          kotlin:                     "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
+          kotlinCoroutines:           "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version",
+          kotlinCoroutinesAndroid:    "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version",
+          kotlinCoroutinesPlay:       "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$kotlin_coroutines_version",
+          appCompat:                  "androidx.appcompat:appcompat:$appCompat_version",
+          recyclerView:               "androidx.recyclerview:recyclerview:$appCompat_version",
+          design:                     "com.google.android.material:material:$materialAlpha_version",
+          constraintLayout:           "androidx.constraintlayout:constraintlayout:$constraintLayout_version",
+          androidCore:                "androidx.core:core-ktx:$core_version",
+          androidAnnotations:         "androidx.annotation:annotation:$material_version",
+          archComponents:             "androidx.lifecycle:lifecycle-extensions:$archComponents_version",
+          archComponentsCompiler:     "androidx.lifecycle:lifecycle-compiler:$archComponents_version",
+          glide:                      "com.github.bumptech.glide:glide:$glide_version",
+          daggerCompiler:             "com.google.dagger:dagger-compiler:$dagger_version",
+          dagger:                     "com.google.dagger:dagger:$dagger_version",
+          javaxAnnotation:            "javax.annotation:jsr250-api:$javaxAnnotations_version",
+          javaxInject:                "javax.inject:javax.inject:$javaxInject_version",
+          retrofit:                   "com.squareup.retrofit2:converter-gson:$retrofit_version",
+          okhttpLoggingInterceptor:   "com.squareup.okhttp3:logging-interceptor:$okhttp_logging_interceptor_version",
+          firebaseCore:               "com.google.firebase:firebase-core:$firebaseCore_version",
+          mlVision:                   "com.google.firebase:firebase-ml-vision:$mlVision_version",
+          cameraX:                    "androidx.camera:camera-camera2:$cameraX_version",
+          cameraLifeCycle:            "androidx.camera:camera-lifecycle:$cameraX_version",
+          cameraView:                 "androidx.camera:camera-view:$cameraView_version"
+  ]
+
+  unitTesting = [
+      kotlin:             "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
+      kotlinTest:         "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version",
+      robolectric:        "org.robolectric:robolectric:$robolectric_version",
+      junit:              "junit:junit:$junit_version",
+      mockito:            "com.nhaarman:mockito-kotlin:$mockito_version",
+      kluent:             "org.amshove.kluent:kluent:$kluent_version",
+  ]
+
+  acceptanceTesting = [
+          testRunner:         "androidx.test:runner:$runner_version",
+          testRules:          "androidx.test:rules:$runner_version",
+          espressoCore:       "androidx.test.espresso:espresso-core:$espresso_version",
+          espressoIntents:    "androidx.test.espresso:espresso-intents:$espresso_version",
+          androidAnnotations: "androidx.annotation:annotation:$material_version",
+  ]
+
+  development = [
+      leakCanary:         "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",
+      leakCanaryNoop:     "com.squareup.leakcanary:leakcanary-android-no-op:${leakCanaryVersion}",
+  ]
+}

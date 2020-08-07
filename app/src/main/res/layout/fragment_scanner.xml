@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/flashLayout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:background="@android:color/transparent"
+        android:orientation="horizontal"
+        android:gravity="end|center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/processTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/time_label"
+            android:layout_marginEnd="32dp"
+            android:visibility="gone"/>
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/flashGroup"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:weightSum="2"
+            app:checkedButton="@id/off"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:singleSelection="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/off"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                style="@style/IconOnlyButton"
+                android:layout_gravity="start"
+                app:iconGravity="textStart"
+                app:icon="@drawable/ic_flash_off"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/on"
+                style="@style/IconOnlyButton"
+                android:layout_gravity="start"
+                app:iconGravity="textStart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:icon="@drawable/ic_flash_on" />
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+    </LinearLayout>
+    <androidx.camera.view.PreviewView
+        android:id="@+id/scannerCamera"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/urlLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flashLayout" />
+
+    <FrameLayout
+        android:id="@+id/blocksContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/urlLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flashLayout" />
+
+
+    <LinearLayout
+        android:id="@+id/urlLayout"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:gravity="center_vertical|center"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/url"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:hint="@string/url_scan_hint"
+            android:gravity="start|center"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_weight="2"
+            android:enabled="false"
+            android:textAllCaps="false"
+            android:layout_marginEnd="16dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/clear"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:text="@string/clear"
+            android:textSize="14sp"
+            android:enabled="false"
+            android:textColor="@color/gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
