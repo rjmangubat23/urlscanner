@@ -31,7 +31,5 @@ Tech stack used
 
 Authors and Acknowledgment
 ---
-For NewLogic exam purposes
-
 © Reuben James Mangubat
 
